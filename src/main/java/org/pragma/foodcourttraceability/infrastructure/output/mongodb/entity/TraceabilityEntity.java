@@ -2,8 +2,7 @@ package org.pragma.foodcourttraceability.infrastructure.output.mongodb.entity;
 import org.springframework.data.annotation.Id;
 import lombok.Data;
 import org.springframework.data.mongodb.core.mapping.Document;
-
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 
 @Document(collection = "traceability")
@@ -15,7 +14,7 @@ public class TraceabilityEntity{
     private Long orderId;
     private Long customerId;
     private String customerEmail;
-    private LocalDate date;
+    private LocalDateTime date;
     private String previousStatus;
     private String newStatus;
     private Long employeeId;

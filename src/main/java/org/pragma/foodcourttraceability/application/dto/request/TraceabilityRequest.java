@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Getter
 @AllArgsConstructor
@@ -12,7 +13,7 @@ public class TraceabilityRequest{
     private Long orderId;
     private Long customerId;
     private String customerEmail;
-    private LocalDate date;
+    private LocalDateTime date;
     private String previousStatus;
     private String newStatus;
     private Long employeeId;

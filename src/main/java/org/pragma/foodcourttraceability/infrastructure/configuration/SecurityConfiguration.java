@@ -30,6 +30,8 @@ public class SecurityConfiguration{
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/user/**", "/swagger-ui.html", "/swagger-ui/**", "/v3/api-docs/**").permitAll()
                         .requestMatchers( "/traceability/").permitAll()
+                        .requestMatchers( "/traceability/**").permitAll()
+
                         .anyRequest().denyAll()
                 );
         return httpSecurity.build();

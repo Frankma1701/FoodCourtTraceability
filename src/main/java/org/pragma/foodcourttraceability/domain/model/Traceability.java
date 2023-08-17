@@ -1,19 +1,20 @@
 package org.pragma.foodcourttraceability.domain.model;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class Traceability{
     private String id;
     private Long orderId;
     private Long customerId;
     private String customerEmail;
-    private LocalDate date;
+    private LocalDateTime date;
     private String previousStatus;
     private String newStatus;
     private Long employeeId;
     private String employeeEmail;
 
-    public Traceability (String id, Long orderId, Long customerId, String customerEmail, LocalDate date, String previousStatus, String newStatus, Long employeeId, String employeeEmail){
+    public Traceability (String id, Long orderId, Long customerId, String customerEmail, LocalDateTime date, String previousStatus, String newStatus, Long employeeId, String employeeEmail){
         this.id = id;
         this.orderId = orderId;
         this.customerId = customerId;
@@ -57,11 +58,11 @@ public class Traceability{
         this.customerEmail = customerEmail;
     }
 
-    public LocalDate getDate (){
+    public LocalDateTime getDate (){
         return date;
     }
 
-    public void setDate (LocalDate date){
+    public void setDate (LocalDateTime date){
         this.date = date;
     }
 

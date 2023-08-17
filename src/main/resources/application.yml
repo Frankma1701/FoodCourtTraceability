@@ -8,6 +8,7 @@ spring:
       host: localhost
       port: 27017
       database: food_court_traceability
+      timeZone: America/Bogota
 
 springdoc:
   swagger-ui:
