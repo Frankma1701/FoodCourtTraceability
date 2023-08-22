@@ -1,10 +1,5 @@
 package org.pragma.foodcourttraceability.util;
 import org.pragma.foodcourttraceability.domain.model.Traceability;
-<<<<<<< HEAD
-
-import java.time.LocalDate;
-=======
->>>>>>> HU_18_order_efficiency
 import java.time.LocalDateTime;
 
 public class FactoryTraceability{
