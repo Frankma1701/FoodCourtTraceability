@@ -10,7 +10,6 @@ import org.pragma.foodcourttraceability.domain.model.Traceability;
         unmappedSourcePolicy = ReportingPolicy.IGNORE)
 public interface TraceabilityRequestMapper{
     Traceability toTraceability(TraceabilityRequest traceabilityRequest);
-    TraceabilityRequest toTraceabilityRequest(Traceability traceability);
 
 
 

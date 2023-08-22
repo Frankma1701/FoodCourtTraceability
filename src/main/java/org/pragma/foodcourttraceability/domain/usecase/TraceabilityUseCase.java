@@ -6,7 +6,7 @@ import java.util.List;
 
 public class TraceabilityUseCase implements ITraceabilityServicePort{
 
-    private ITraceabilityPersistencePort iTraceabilityPersistencePort;
+    private final ITraceabilityPersistencePort iTraceabilityPersistencePort;
 
     public TraceabilityUseCase (ITraceabilityPersistencePort iTraceabilityPersistencePort){
         this.iTraceabilityPersistencePort = iTraceabilityPersistencePort;

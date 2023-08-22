@@ -12,7 +12,5 @@ import java.util.List;
 public interface TraceabilityResponseMapper{
     TraceabilityResponse toResponse(Traceability traceability);
 
-    List<Traceability> toTraceabilityList(List<TraceabilityResponse> traceabilityResponses);
-
     List<TraceabilityResponse> toResponseList(List<Traceability> traceabilityList);
 }

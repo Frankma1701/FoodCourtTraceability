@@ -18,7 +18,7 @@ import java.util.function.Function;
 @Service
 public class JwtService{
 
-    private String SECRET_KEY;
+    private final String SECRET_KEY;
 
     @Autowired
     public JwtService(@Value("${jwt.secret-key}") String secretKey) {
