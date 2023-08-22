@@ -28,9 +28,10 @@ public class SecurityConfiguration{
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/swagger-ui.html", "/swagger-ui/**", "/v3/api-docs/**").permitAll()
-                        .requestMatchers(HttpMethod.POST, "/traceability/").hasRole("CUSTOMER")
-                        .requestMatchers(HttpMethod.GET, "/traceability/{customerId}").hasRole("CUSTOMER")
-                        .requestMatchers(HttpMethod.GET, "/traceability/").hasRole("OWNER")
+                        .requestMatchers(HttpMethod.POST, "/traceability/").hasAnyRole("EMPLOYEE", "CUSTOMER")
+                        .requestMatchers(HttpMethod.GET, "/traceability/{customerId}").hasAnyRole("EMPLOYEE","CUSTOMER")
+                        .requestMatchers(HttpMethod.GET, "/traceability/").hasAnyRole("OWNER","EMPLOYEE")
+
                         .anyRequest().denyAll()
                 );
         return httpSecurity.build();
