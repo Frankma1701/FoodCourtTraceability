@@ -2,14 +2,13 @@ package org.pragma.foodcourttraceability.application.dto.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Getter
 @AllArgsConstructor
 public class TraceabilityResponse{
 
+    private String id;
     private Long orderId;
     private Long customerId;
     private String customerEmail;
@@ -18,4 +17,5 @@ public class TraceabilityResponse{
     private String newStatus;
     private Long employeeId;
     private String employeeEmail;
+    private Long restaurantId;
 }

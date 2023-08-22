@@ -8,6 +8,7 @@ public interface ITraceabilityPersistencePort{
     Traceability saveTraceability(Traceability traceability);
 
     List<Traceability> getAllTraceabilityByCustomerId(Long customerId);
+    List<Traceability> getAllTraceability();
 
 
 }

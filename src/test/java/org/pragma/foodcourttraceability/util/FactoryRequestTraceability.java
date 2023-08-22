@@ -1,16 +1,13 @@
 package org.pragma.foodcourttraceability.util;
-import org.pragma.foodcourttraceability.domain.model.Traceability;
-<<<<<<< HEAD
 
-import java.time.LocalDate;
-=======
->>>>>>> HU_18_order_efficiency
+import org.pragma.foodcourttraceability.application.dto.request.TraceabilityRequest;
+import org.pragma.foodcourttraceability.domain.model.Traceability;
+
 import java.time.LocalDateTime;
 
-public class FactoryTraceability{
+public class FactoryRequestTraceability{
 
-    public static final Traceability traceability = new Traceability(
-            "1",
+    public static final TraceabilityRequest traceabilityRequest = new TraceabilityRequest(
             123L,
             456L,
             "customer@example.com",
@@ -21,5 +18,4 @@ public class FactoryTraceability{
             "employee@email.com",
             1L
     );
-    public  static final Long TRACEABILITY_ID = 1L;
 }
