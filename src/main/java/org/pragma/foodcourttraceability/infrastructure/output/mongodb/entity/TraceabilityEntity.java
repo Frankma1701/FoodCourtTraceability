@@ -3,7 +3,9 @@ import org.springframework.data.annotation.Id;
 import lombok.Data;
 import org.springframework.data.mongodb.core.mapping.Document;
 import java.time.LocalDateTime;
-@Document(collection = "traceability") public class TraceabilityEntity{
+@Document(collection = "traceability")
+@Data
+public class TraceabilityEntity{
     @Id
     private String id;
     private Long orderId;
