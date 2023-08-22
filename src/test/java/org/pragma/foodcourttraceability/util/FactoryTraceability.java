@@ -3,6 +3,7 @@ package org.pragma.foodcourttraceability.util;
 import org.pragma.foodcourttraceability.domain.model.Traceability;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class FactoryTraceability{
 
@@ -11,10 +12,11 @@ public class FactoryTraceability{
             123L,
             456L,
             "customer@example.com",
-            LocalDate.now(),
+            LocalDateTime.now(),
             "PENDING",
             "IN_PREPARATION",
             789L,
             "employee@example.com"
     );
+
 }
