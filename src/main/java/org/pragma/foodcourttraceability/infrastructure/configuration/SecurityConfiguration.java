@@ -2,6 +2,7 @@ package org.pragma.foodcourttraceability.infrastructure.configuration;
 
 import lombok.RequiredArgsConstructor;
 import org.pragma.foodcourttraceability.infrastructure.security.JwtAuthenticationFilter;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -10,7 +11,6 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-
 import static org.springframework.security.config.Customizer.withDefaults;
 
 @Configuration
@@ -22,16 +22,15 @@ public class SecurityConfiguration{
 
     @Bean
     public SecurityFilterChain securityFilterChain (HttpSecurity httpSecurity) throws Exception{
-        //noinspection removal
         httpSecurity.cors(withDefaults())
                 .csrf(csrf -> csrf.disable())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)
                 .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers("/user/**", "/swagger-ui.html", "/swagger-ui/**", "/v3/api-docs/**").permitAll()
-                        .requestMatchers( "/traceability/").permitAll()
-                        .requestMatchers( "/traceability/**").permitAll()
-
+                        .requestMatchers("/swagger-ui.html", "/swagger-ui/**", "/v3/api-docs/**").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/traceability/").hasRole("CUSTOMER")
+                        .requestMatchers(HttpMethod.GET, "/traceability/{customerId}").hasRole("CUSTOMER")
+                        .requestMatchers(HttpMethod.GET, "/traceability/").hasRole("OWNER")
                         .anyRequest().denyAll()
                 );
         return httpSecurity.build();

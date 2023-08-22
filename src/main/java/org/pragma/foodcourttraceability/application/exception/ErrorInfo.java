@@ -1,13 +1,11 @@
-package org.pragma.foodcourttraceability.infrastructure.exception;
+package org.pragma.foodcourttraceability.application.exception;
 
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
 
-@Data
 @Builder
+@Getter
 public class ErrorInfo {
     private String code;
     private String message;
-
-
 }

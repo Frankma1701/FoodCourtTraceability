@@ -4,7 +4,6 @@ import org.mapstruct.MappingConstants;
 import org.mapstruct.ReportingPolicy;
 import org.pragma.foodcourttraceability.application.dto.response.TraceabilityResponse;
 import org.pragma.foodcourttraceability.domain.model.Traceability;
-
 import java.util.List;
 
 @Mapper(componentModel = MappingConstants.ComponentModel.SPRING,

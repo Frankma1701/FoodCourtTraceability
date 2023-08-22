@@ -11,5 +11,6 @@ public interface ITraceabilityHandler{
 
     List<TraceabilityResponse> getAllTraceabilityByCustomerId(Long customerId);
 
+    List<TraceabilityResponse> getAllTraceability();
 
 }
